@@ -11,13 +11,21 @@
     background: #f6f6f6;
     border-right: 1px solid #e5e5e5;
     flex-shrink: 0;
-    height: calc(100vh - 130px);
+    min-height: 100vh;
     overflow-y: auto;
     position: relative;
 }
 
 .fr-sidemenu__inner {
     padding: 1.5rem 0;
+    box-shadow: none;
+}
+
+@media (min-width: 48em) {
+    .fr-sidemenu__inner {
+        box-shadow: none;
+        padding-right: 0;
+    }
 }
 
 .fr-sidemenu__title {
@@ -46,6 +54,7 @@
     color: #161616;
     text-decoration: none;
     transition: background-color 0.2s;
+    width: 100%;
 }
 
 .fr-sidemenu__link:hover {
@@ -53,8 +62,22 @@
 }
 
 .fr-sidemenu__item--active .fr-sidemenu__link {
-    background-color: #000091;
-    color: white;
+    background-color: transparent;
+    color: #000091;
+}
+.fr-sidemenu__item--active .fr-sidemenu__icon,
+.fr-sidemenu__item--active .fr-sidemenu__link * {
+    color: #000091;
+}
+
+/* Dark theme: subtle background for active item, keep good contrast */
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__link {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__icon,
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__link * {
+    color: #ffffff;
 }
 
 .fr-sidemenu__icon {
@@ -66,7 +89,7 @@
     flex: 1;
     overflow-x: hidden;
     background: #fafafa;
-    min-height: calc(100vh - 130px);
+    min-height: 100vh;
 }
 
 .fr-container-fluid {
@@ -94,6 +117,9 @@
 
 .fr-grid-row.align-items-end .fr-input,
 .fr-grid-row.align-items-end .fr-select {
+    margin-bottom: 0;
+}
+.fr-grid-row.align-items-end .fr-search-bar {
     margin-bottom: 0;
 }
 
@@ -340,4 +366,72 @@
     100% {
         background-position: -200% 0;
     }
+}
+
+/* Dark theme contrast improvements */
+[data-fr-theme="dark"] .fr-sidemenu {
+    background: #1f1f1f;
+    border-right: 1px solid #2b2b2b;
+}
+[data-fr-theme="dark"] .fr-sidemenu__title {
+    color: #b5b5b5;
+}
+[data-fr-theme="dark"] .fr-sidemenu__link {
+    color: #f0f0f0;
+}
+[data-fr-theme="dark"] .fr-sidemenu__link:hover {
+    background-color: #2a2a2a;
+}
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__link {
+    background-color: #000091;
+    color: #ffffff;
+}
+[data-fr-theme="dark"] .main-content {
+    background: #111111;
+}
+[data-fr-theme="dark"] .fr-container-fluid {
+    background: #1a1a1a;
+    border: 1px solid #2b2b2b;
+}
+[data-fr-theme="dark"] .campaigns-table-container {
+    background: #1a1a1a;
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .campaigns-table thead {
+    background: #232323;
+    border-bottom-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .campaigns-table td,
+[data-fr-theme="dark"] .campaigns-table th {
+    color: #efefef;
+}
+[data-fr-theme="dark"] .campaigns-table tbody tr:hover {
+    background-color: #202020;
+}
+[data-fr-theme="dark"] .metric-value {
+    color: #f5f5f5;
+}
+[data-fr-theme="dark"] .metric-percentage {
+    color: #d0d0d0;
+    opacity: 1;
+}
+[data-fr-theme="dark"] .campaign-name {
+    color: #9aaaff;
+}
+[data-fr-theme="dark"] .campaign-date {
+    color: #b5b5b5;
+}
+[data-fr-theme="dark"] .fr-input,
+[data-fr-theme="dark"] .fr-select,
+[data-fr-theme="dark"] .fr-search-bar .fr-input {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .fr-input::placeholder {
+    color: #a9a9a9;
+}
+[data-fr-theme="dark"] .fr-select option {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
 }

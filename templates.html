@@ -36,8 +36,8 @@
                         <div class="fr-header__tools-links">
                             <ul class="fr-btns-group">
                                 <li>
-                                    <button class="fr-btn fr-btn--icon-left fr-icon-add-line" onclick="openCreateTemplateModal()">
-                                        Créer un template
+                                    <button id="theme-toggle" class="fr-btn fr-btn--tertiary-no-outline" type="button" aria-pressed="false">
+                                        Basculer le thème
                                     </button>
                                 </li>
                             </ul>
@@ -106,13 +106,18 @@
                 <!-- Page title -->
                 <div class="fr-grid-row fr-grid-row--gutters fr-mb-3w">
                     <div class="fr-col-12">
-                        <h1>Templates d'emails</h1>
+                        <div class="page-title-bar">
+                            <h1>Templates d'emails</h1>
+                            <button class="fr-btn fr-btn--icon-left fr-icon-add-line" type="button" onclick="window.location.href='create-template.html'">
+                                Créer un template
+                            </button>
+                        </div>
                         <p class="fr-text--lead">Gérez vos modèles d'emails pour vos campagnes de recrutement</p>
                     </div>
                 </div>
 
                 <!-- Filters -->
-                <div class="fr-grid-row fr-grid-row--gutters fr-mb-4w">
+                <div class="fr-grid-row fr-grid-row--gutters fr-mb-4w align-items-end">
                     <div class="fr-col-12 fr-col-md-6">
                         <div class="fr-search-bar" role="search">
                             <label class="fr-label" for="search-templates">
@@ -167,7 +172,7 @@
                 <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
                     <div class="fr-modal__body">
                         <div class="fr-modal__header">
-                            <button class="fr-btn--close fr-btn" onclick="closeTemplateModal()" aria-label="Fermer">
+                            <button class="fr-btn--close fr-btn" onclick="closeTemplateModal()" aria-label="Fermer" aria-controls="template-modal" type="button">
                                 Fermer
                             </button>
                         </div>
@@ -227,9 +232,8 @@
         </div>
     </dialog>
 
-    <!-- DSFR JS -->
-    <script type="module" src="node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
-    <script nomodule src="node_modules/@gouvfr/dsfr/dist/dsfr.nomodule.min.js"></script>
+    <!-- App JS -->
+    <script src="theme.js"></script>
     <script src="templates.js"></script>
 </body>
 </html>
