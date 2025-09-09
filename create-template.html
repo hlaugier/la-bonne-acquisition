@@ -75,8 +75,9 @@
                 </div>
 
                 <!-- Form -->
-                <form id="composer-form" class="fr-grid-row fr-grid-row--gutters fr-mb-4w align-items-end">
-                    <div class="fr-col-12 fr-col-md-4">
+                <form id="composer-form" class="fr-grid-row fr-grid-row--gutters fr-mb-4w">
+                    <!-- Col gauche: cible + variables -->
+                    <div class="fr-col-12 fr-col-lg-6">
                         <div class="fr-input-group">
                             <label class="fr-label" for="audience-input">Cible de la campagne</label>
                             <input class="fr-input" id="audience-input" name="audience" placeholder="Ex. Recruteurs Tech, PME, Alumni" />
@@ -92,20 +93,18 @@
                             </div>
                         </details>
                     </div>
-                    <div class="fr-col-12 fr-col-md-4">
+
+                    <!-- Col droite: but + description + action -->
+                    <div class="fr-col-12 fr-col-lg-6">
                         <div class="fr-input-group">
                             <label class="fr-label" for="goal-input">But de la campagne</label>
                             <input class="fr-input" id="goal-input" name="goal" placeholder="Ex. Dépôt d'offres, Inscription, Candidatures" />
                         </div>
-                    </div>
-                    <div class="fr-col-12 fr-col-md-12 fr-mt-2w">
-                        <div class="fr-input-group">
+                        <div class="fr-input-group fr-mt-2w">
                             <label class="fr-label" for="description-input">Description de la campagne</label>
-                            <textarea class="fr-input" id="description-input" name="description" rows="5" placeholder="Contexte, ton, points clés, contraintes…"></textarea>
+                            <textarea class="fr-input" id="description-input" name="description" rows="8" placeholder="Contexte, ton, points clés, contraintes…"></textarea>
                         </div>
-                    </div>
-                    <div class="fr-col-12">
-                        <div class="action-bar">
+                        <div class="action-bar fr-mt-2w">
                             <button id="generate-btn" type="button" class="fr-btn">Lancer la rédaction</button>
                             <img class="claude-logo" src="https://mintcdn.com/anthropic/PF_69UDRSEsLpN9D/logo/light.svg?fit=max&auto=format&n=PF_69UDRSEsLpN9D&q=85&s=963e6ff7a6fa0b7e91190b91eda1bcc9" alt="Claude" />
                         </div>
