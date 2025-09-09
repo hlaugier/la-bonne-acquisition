@@ -119,6 +119,9 @@
 .fr-grid-row.align-items-end .fr-select {
     margin-bottom: 0;
 }
+.fr-grid-row.align-items-end .fr-search-bar {
+    margin-bottom: 0;
+}
 
 /* Simple table styles */
 .campaigns-table-container {
