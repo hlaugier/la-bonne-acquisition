@@ -81,6 +81,16 @@
                             <label class="fr-label" for="audience-input">Cible de la campagne</label>
                             <input class="fr-input" id="audience-input" name="audience" placeholder="Ex. Recruteurs Tech, PME, Alumni" />
                         </div>
+                        <details id="variables-accordion" class="variables-accordion fr-mt-2w">
+                            <summary class="variables-summary">Variables de personnalisation <span id="vars-count" class="vars-count">(0 sélectionnée)</span></summary>
+                            <div class="variables-body">
+                                <div class="fr-input-group fr-mb-2w">
+                                    <label class="fr-label" for="vars-search">Rechercher une variable</label>
+                                    <input class="fr-input" id="vars-search" placeholder="Ex. NAF, raison sociale…" />
+                                </div>
+                                <div id="vars-list" class="variables-list" aria-live="polite"></div>
+                            </div>
+                        </details>
                     </div>
                     <div class="fr-col-12 fr-col-md-4">
                         <div class="fr-input-group">
