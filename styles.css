@@ -46,6 +46,7 @@
     color: #161616;
     text-decoration: none;
     transition: background-color 0.2s;
+    width: 100%;
 }
 
 .fr-sidemenu__link:hover {
