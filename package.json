@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "browser-sync start --server --port 3000 --files 'index.html,templates.html,styles.css,templates.css,app.js,templates.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
