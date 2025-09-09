@@ -199,3 +199,35 @@
     font-family: monospace;
     font-size: 0.875em;
 }
+
+/* Dark theme contrast improvements */
+[data-fr-theme="dark"] .template-card {
+    background: #1f1f1f;
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .template-card__title {
+    color: #f2f2f2;
+}
+[data-fr-theme="dark"] .template-card__subject,
+[data-fr-theme="dark"] .template-card__preview,
+[data-fr-theme="dark"] .templates-empty__text,
+[data-fr-theme="dark"] .template-card__stats {
+    color: #cfcfcf;
+}
+[data-fr-theme="dark"] .template-card__action {
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .template-card__action:hover {
+    background-color: #2a2a2a;
+}
+[data-fr-theme="dark"] .templates-empty {
+    background: #2a2a2a;
+}
+[data-fr-theme="dark"] .template-preview {
+    background: #2a2a2a;
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .template-preview__content {
+    background: #1a1a1a;
+    border-color: #2b2b2b;
+}
