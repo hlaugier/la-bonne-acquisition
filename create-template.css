@@ -13,9 +13,9 @@
 
 /* Variables accordion */
 .variables-accordion{border:1px solid #e5e5e5;border-radius:.5rem;background:#ffffff}
-.variables-summary{display:flex;align-items:center;justify-content:flex-start;cursor:pointer;list-style:none;padding:0.75rem 1rem;font-weight:600;width:100%;flex-wrap:wrap;gap:.25rem .5rem;word-break:break-word}
+.variables-summary{display:grid;grid-template-columns:1fr auto;align-items:center;cursor:pointer;list-style:none;padding:0.75rem 1rem;font-weight:600;width:100%;gap:.25rem .5rem;word-break:break-word;overflow:hidden}
 .variables-summary::-webkit-details-marker{display:none}
-.vars-count{font-weight:400;color:#666;margin-left:auto;white-space:normal;overflow-wrap:anywhere;flex:0 1 auto;max-width:50%}
+.vars-count{font-weight:400;color:#666;margin-left:0;white-space:nowrap;justify-self:end}
 .variables-body{border-top:1px solid #e5e5e5;padding:1rem}
 .variables-list{display:grid;grid-template-columns:1fr;gap:.5rem;max-height:240px;overflow:auto}
 .variables-item{display:flex;align-items:center;gap:.5rem;padding:.25rem .25rem;border-radius:.25rem}
