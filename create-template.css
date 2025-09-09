@@ -13,8 +13,9 @@
 
 /* Variables accordion */
 .variables-accordion{border:1px solid #e5e5e5;border-radius:.5rem;background:#ffffff}
-.variables-summary{display:grid;grid-template-columns:1fr auto;align-items:center;cursor:pointer;list-style:none;padding:0.75rem 1rem;font-weight:600;width:100%;gap:.25rem .5rem;word-break:break-word;overflow:hidden}
+.variables-summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;cursor:pointer;list-style:none;padding:0.75rem 1rem;font-weight:600;width:100%;gap:.5rem;box-sizing:border-box}
 .variables-summary::-webkit-details-marker{display:none}
+.variables-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .vars-count{font-weight:400;color:#666;margin-left:0;white-space:nowrap;justify-self:end}
 .variables-body{border-top:1px solid #e5e5e5;padding:1rem}
 .variables-list{display:grid;grid-template-columns:1fr;gap:.5rem;max-height:240px;overflow:auto}
