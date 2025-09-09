@@ -36,11 +36,6 @@
                         <div class="fr-header__tools-links">
                             <ul class="fr-btns-group">
                                 <li>
-                                    <button class="fr-btn fr-btn--icon-left fr-icon-add-line" onclick="openCreateTemplateModal()">
-                                        Créer un template
-                                    </button>
-                                </li>
-                                <li>
                                     <button id="theme-toggle" class="fr-btn fr-btn--tertiary-no-outline" type="button" aria-pressed="false">
                                         Basculer le thème
                                     </button>
@@ -111,7 +106,12 @@
                 <!-- Page title -->
                 <div class="fr-grid-row fr-grid-row--gutters fr-mb-3w">
                     <div class="fr-col-12">
-                        <h1>Templates d'emails</h1>
+                        <div class="page-title-bar">
+                            <h1>Templates d'emails</h1>
+                            <button class="fr-btn fr-btn--icon-left fr-icon-add-line" type="button" onclick="openCreateTemplateModal()">
+                                Créer un template
+                            </button>
+                        </div>
                         <p class="fr-text--lead">Gérez vos modèles d'emails pour vos campagnes de recrutement</p>
                     </div>
                 </div>
