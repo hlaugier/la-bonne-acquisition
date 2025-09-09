@@ -62,11 +62,21 @@
 }
 
 .fr-sidemenu__item--active .fr-sidemenu__link {
-    background-color: #000091;
-    color: #ffffff;
+    background-color: transparent;
+    color: #000091;
 }
 .fr-sidemenu__item--active .fr-sidemenu__icon,
 .fr-sidemenu__item--active .fr-sidemenu__link * {
+    color: #000091;
+}
+
+/* Dark theme: subtle background for active item, keep good contrast */
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__link {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__icon,
+[data-fr-theme="dark"] .fr-sidemenu__item--active .fr-sidemenu__link * {
     color: #ffffff;
 }
 
