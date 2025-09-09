@@ -18,6 +18,14 @@
 
 .fr-sidemenu__inner {
     padding: 1.5rem 0;
+    box-shadow: none;
+}
+
+@media (min-width: 48em) {
+    .fr-sidemenu__inner {
+        box-shadow: none;
+        padding-right: 0;
+    }
 }
 
 .fr-sidemenu__title {
