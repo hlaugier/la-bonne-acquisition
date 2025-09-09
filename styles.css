@@ -63,7 +63,11 @@
 
 .fr-sidemenu__item--active .fr-sidemenu__link {
     background-color: #000091;
-    color: white;
+    color: #ffffff;
+}
+.fr-sidemenu__item--active .fr-sidemenu__icon,
+.fr-sidemenu__item--active .fr-sidemenu__link * {
+    color: #ffffff;
 }
 
 .fr-sidemenu__icon {
