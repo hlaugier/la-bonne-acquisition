@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr" data-fr-theme>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer un template - La Bonne Acquisition</title>
+    <link rel="stylesheet" href="node_modules/@gouvfr/dsfr/dist/dsfr.min.css" />
+    <link rel="stylesheet" href="node_modules/@gouvfr/dsfr/dist/utility/icons/icons.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="create-template.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner" class="fr-header">
+        <div class="fr-header__body">
+            <div class="fr-container">
+                <div class="fr-header__body-row">
+                    <div class="fr-header__brand fr-enlarge-link">
+                        <div class="fr-header__brand-top">
+                            <div class="fr-header__logo">
+                                <p class="fr-logo">République<br/>Française</p>
+                            </div>
+                            <div class="fr-header__service">
+                                <a href="/" title="La Bonne Acquisition">
+                                    <p class="fr-header__service-title">La Bonne Acquisition</p>
+                                </a>
+                                <p class="fr-header__service-tagline">Plateforme de gestion des campagnes de recrutement</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr-header__tools">
+                        <div class="fr-header__tools-links">
+                            <ul class="fr-btns-group">
+                                <li>
+                                    <button id="theme-toggle" class="fr-btn fr-btn--tertiary-no-outline" type="button" aria-pressed="false">Basculer le thème</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="fr-sidemenu" aria-label="Menu latéral">
+            <div class="fr-sidemenu__inner">
+                <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">Menu</button>
+                <div class="fr-sidemenu__wrapper" id="fr-sidemenu-wrapper">
+                    <div class="fr-sidemenu__title">Navigation</div>
+                    <ul class="fr-sidemenu__list">
+                        <li class="fr-sidemenu__item"><a class="fr-sidemenu__link" href="index.html"><span class="fr-icon-dashboard-3-line fr-sidemenu__icon" aria-hidden="true"></span>Dashboard</a></li>
+                        <li class="fr-sidemenu__item fr-sidemenu__item--active"><a class="fr-sidemenu__link" href="templates.html"><span class="fr-icon-file-text-line fr-sidemenu__icon" aria-hidden="true"></span>Templates</a></li>
+                        <li class="fr-sidemenu__item"><a class="fr-sidemenu__link" href="#contacts"><span class="fr-icon-user-line fr-sidemenu__icon" aria-hidden="true"></span>Contacts</a></li>
+                        <li class="fr-sidemenu__item"><a class="fr-sidemenu__link" href="#campaigns"><span class="fr-icon-mail-line fr-sidemenu__icon" aria-hidden="true"></span>Campagnes</a></li>
+                        <li class="fr-sidemenu__item"><a class="fr-sidemenu__link" href="#analytics"><span class="fr-icon-bar-chart-box-line fr-sidemenu__icon" aria-hidden="true"></span>Analytiques</a></li>
+                        <li class="fr-sidemenu__item"><a class="fr-sidemenu__link" href="#settings"><span class="fr-icon-settings-5-line fr-sidemenu__icon" aria-hidden="true"></span>Paramètres</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main -->
+        <main id="main" role="main" class="main-content">
+            <div class="fr-container-fluid fr-py-6w">
+                <div class="fr-grid-row fr-grid-row--gutters fr-mb-3w">
+                    <div class="fr-col-12">
+                        <div class="page-title-bar">
+                            <h1>Nouveau template</h1>
+                            <a href="templates.html" class="fr-btn fr-btn--secondary">Retour aux templates</a>
+                        </div>
+                        <p class="fr-text--lead">Décrivez votre campagne, générez le code et prévisualisez le rendu.</p>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="composer-form" class="fr-grid-row fr-grid-row--gutters fr-mb-4w align-items-end">
+                    <div class="fr-col-12 fr-col-md-4">
+                        <div class="fr-input-group">
+                            <label class="fr-label" for="audience-input">Cible de la campagne</label>
+                            <input class="fr-input" id="audience-input" name="audience" placeholder="Ex. Recruteurs Tech, PME, Alumni" />
+                        </div>
+                    </div>
+                    <div class="fr-col-12 fr-col-md-4">
+                        <div class="fr-input-group">
+                            <label class="fr-label" for="goal-input">But de la campagne</label>
+                            <input class="fr-input" id="goal-input" name="goal" placeholder="Ex. Dépôt d'offres, Inscription, Candidatures" />
+                        </div>
+                    </div>
+                    <div class="fr-col-12 fr-col-md-12 fr-mt-2w">
+                        <div class="fr-input-group">
+                            <label class="fr-label" for="description-input">Description de la campagne</label>
+                            <textarea class="fr-input" id="description-input" name="description" rows="5" placeholder="Contexte, ton, points clés, contraintes…"></textarea>
+                        </div>
+                    </div>
+                    <div class="fr-col-12">
+                        <button id="generate-btn" type="button" class="fr-btn">
+                            <img class="claude-icon" src="https://mintcdn.com/anthropic/PF_69UDRSEsLpN9D/logo/light.svg?fit=max&auto=format&n=PF_69UDRSEsLpN9D&q=85&s=963e6ff7a6fa0b7e91190b91eda1bcc9" alt="Claude" />
+                            Lancer la rédaction
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Editor & Preview -->
+                <div class="editor-layout">
+                    <section class="editor-panel">
+                        <div class="panel-header">
+                            <h2>Code HTML généré</h2>
+                        </div>
+                        <textarea id="html-code" class="code-area" spellcheck="false"></textarea>
+                    </section>
+                    <section class="preview-panel">
+                        <div class="panel-header">
+                            <h2>Aperçu de la campagne</h2>
+                        </div>
+                        <iframe id="preview-frame" title="Aperçu du template"></iframe>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="create-template.js"></script>
+</body>
+</html>
