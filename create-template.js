@@ -2,6 +2,56 @@
   const htmlArea = () => document.getElementById('html-code');
   const frame = () => document.getElementById('preview-frame');
 
+  // Catalog of available variables (extendable)
+  const variablesCatalog = [
+    '{{ contact.NAF_LABEL }}',
+    '{{ contact.RAISON_SOCIALE }}',
+    '{{ contact.NAF_CODE }}',
+    '{{ contact.SIRET }}',
+    '{{ contact.SIREN }}',
+    '{{ contact.CODE_POSTAL }}',
+    '{{ contact.VILLE }}',
+    '{{ contact.NOM_CONTACT }}',
+    '{{ contact.EMAIL }}',
+    '{{ contact.TELEPHONE }}',
+    '{{ contact.SITE_WEB }}',
+    '{{ contact.NB_SALARIES }}'
+  ];
+  const selected = new Set();
+
+  function renderVariables(filter=''){
+    const list = document.getElementById('vars-list');
+    if(!list) return;
+    const query = filter.trim().toLowerCase();
+    const matches = variablesCatalog.filter(v => v.toLowerCase().includes(query));
+    list.innerHTML = matches.map((v, idx)=>{
+      const id = `var-${idx}`;
+      const checked = selected.has(v) ? 'checked' : '';
+      return `
+        <label class="variables-item" for="${id}">
+          <input type="checkbox" id="${id}" value="${v}" ${checked} />
+          <code>${v}</code>
+        </label>`;
+    }).join('');
+
+    list.querySelectorAll('input[type="checkbox"]').forEach(input=>{
+      input.addEventListener('change', (e)=>{
+        const val = e.target.value;
+        if(e.target.checked) selected.add(val); else selected.delete(val);
+        updateVarsCount();
+      });
+    });
+    updateVarsCount();
+  }
+
+  function updateVarsCount(){
+    const el = document.getElementById('vars-count');
+    if(el){
+      const n = selected.size;
+      el.textContent = n === 0 ? '(0 sélectionnée)' : `(${n} sélectionnée${n>1?'s':''})`;
+    }
+  }
+
   function baseHtml(content){
     return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
       body{font-family:Arial,Helvetica,sans-serif;background:#ffffff;color:#222;margin:0}
@@ -18,6 +68,12 @@
     const goal = document.getElementById('goal-input').value.trim() || "Dépôt d'offres";
     const description = document.getElementById('description-input').value.trim() || 'Description de la campagne.';
 
+    const selectedList = Array.from(selected);
+
+    const varsNote = selectedList.length
+      ? `<p style="color:#666;font-size:12px">Variables sélectionnées: ${selectedList.join(', ')}</p>`
+      : '';
+
     const content = `
       <div class="email">
         <div class="header">La Bonne Acquisition</div>
@@ -26,6 +82,7 @@
           <p>Bonjour,</p>
           <p>Cette campagne s'adresse à <strong>${audience}</strong>.</p>
           <p>${description}</p>
+          ${varsNote}
           <a class="cta" href="#">Découvrir l'offre</a>
         </div>
         <div class="footer">Vous recevez cet email dans le cadre de nos campagnes d'information.</div>
@@ -41,6 +98,15 @@
   }
 
   function init(){
+    // Variables UI
+    renderVariables('');
+    const search = document.getElementById('vars-search');
+    if(search){
+      search.addEventListener('input', (e)=>{
+        renderVariables(e.target.value);
+      });
+    }
+
     const initial = generateFromInputs();
     htmlArea().value = initial;
     render(initial);
