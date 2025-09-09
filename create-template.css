@@ -1,6 +1,8 @@
 /* Create Template page */
 .page-title-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .editor-layout{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.action-bar{display:flex;justify-content:flex-end;align-items:center;gap:.75rem}
+.claude-logo{height:1.25rem;width:auto}
 .editor-panel,.preview-panel{background:white;border:1px solid #e5e5e5;border-radius:.5rem;padding:1rem;min-height:480px}
 .panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .code-area{width:100%;height:430px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:.875rem;line-height:1.4;padding:.75rem;border:1px solid #e5e5e5;border-radius:.25rem;background:#f6f6f6;resize:vertical}
