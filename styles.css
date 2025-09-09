@@ -1,0 +1,343 @@
+/* Custom styles for La Bonne Acquisition Dashboard */
+
+/* Layout with sidebar */
+.app-container {
+    display: flex;
+    min-height: calc(100vh - 130px);
+}
+
+.fr-sidemenu {
+    width: 280px;
+    background: #f6f6f6;
+    border-right: 1px solid #e5e5e5;
+    flex-shrink: 0;
+    height: calc(100vh - 130px);
+    overflow-y: auto;
+    position: relative;
+}
+
+.fr-sidemenu__inner {
+    padding: 1.5rem 0;
+}
+
+.fr-sidemenu__title {
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.fr-sidemenu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fr-sidemenu__item {
+    margin-bottom: 0.25rem;
+}
+
+.fr-sidemenu__link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #161616;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.fr-sidemenu__link:hover {
+    background-color: #e5e5e5;
+}
+
+.fr-sidemenu__item--active .fr-sidemenu__link {
+    background-color: #000091;
+    color: white;
+}
+
+.fr-sidemenu__icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.main-content {
+    flex: 1;
+    overflow-x: hidden;
+    background: #fafafa;
+    min-height: calc(100vh - 130px);
+}
+
+.fr-container-fluid {
+    padding: 2rem;
+    max-width: 100%;
+    background: white;
+    margin: 1.5rem;
+    border-radius: 0.5rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* Hide mobile menu button on desktop */
+.fr-sidemenu__btn {
+    display: none;
+}
+
+/* Align form controls */
+.align-items-end {
+    align-items: flex-end;
+}
+
+.fr-input-group, .fr-select-group {
+    margin-bottom: 0;
+}
+
+.fr-grid-row.align-items-end .fr-input,
+.fr-grid-row.align-items-end .fr-select {
+    margin-bottom: 0;
+}
+
+/* Simple table styles */
+.campaigns-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+}
+
+.campaigns-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.campaigns-table thead {
+    background: #f6f6f6;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.campaigns-table th {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #161616;
+    white-space: nowrap;
+}
+
+.campaigns-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.campaigns-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.campaigns-table td {
+    padding: 0.5rem;
+    vertical-align: middle;
+    color: #161616;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    .fr-sidemenu {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .fr-sidemenu__btn {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        text-align: left;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        cursor: pointer;
+    }
+    
+    .fr-sidemenu__wrapper {
+        display: none;
+    }
+    
+    .fr-sidemenu__wrapper[aria-expanded="true"],
+    .fr-sidemenu__btn[aria-expanded="true"] + .fr-sidemenu__wrapper {
+        display: block;
+    }
+    
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .fr-container-fluid {
+        margin: 1rem;
+        min-height: auto;
+    }
+}
+
+.campaign-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.campaign-status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.campaign-status--scheduled {
+    background-color: #e3e3fd;
+    color: #272747;
+}
+
+.campaign-status--scheduled::before {
+    background-color: #6a6af4;
+}
+
+.campaign-status--running {
+    background-color: #fff4e6;
+    color: #6e4700;
+}
+
+.campaign-status--running::before {
+    background-color: #ff9940;
+}
+
+.campaign-status--completed {
+    background-color: #b8fec9;
+    color: #0d4820;
+}
+
+.campaign-status--completed::before {
+    background-color: #18753c;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: #161616;
+}
+
+.metric-percentage {
+    font-size: 0.875rem;
+    color: #161616;
+    display: block;
+    opacity: 0.7;
+}
+
+.campaign-name {
+    font-weight: 500;
+    color: #000091;
+    text-decoration: none;
+    display: block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.campaign-name:hover {
+    text-decoration: underline;
+}
+
+.campaign-date {
+    font-size: 0.875rem;
+    color: #666666;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .campaigns-table {
+        font-size: 0.75rem;
+    }
+    
+    .fr-header__tools-links .fr-btns-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .fr-header__tools-links .fr-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Stats cards */
+.stats-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    background: #f6f6f6;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #666666;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #161616;
+}
+
+/* Loading state */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 0.25rem;
+    height: 1rem;
+    margin: 0.5rem 0;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

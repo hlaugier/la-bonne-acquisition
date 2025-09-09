@@ -1,0 +1,201 @@
+/* Styles for Templates page */
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.template-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.template-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.template-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.template-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #161616;
+    margin: 0;
+}
+
+.template-card__category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.template-card__category--recruitment {
+    background-color: #e3e3fd;
+    color: #3a3a9f;
+}
+
+.template-card__category--onboarding {
+    background-color: #fff4e6;
+    color: #b87a00;
+}
+
+.template-card__category--newsletter {
+    background-color: #b8fec9;
+    color: #18753c;
+}
+
+.template-card__category--event {
+    background-color: #ffe9e9;
+    color: #ce0500;
+}
+
+.template-card__subject {
+    font-size: 0.875rem;
+    color: #666666;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.template-card__subject::before {
+    content: "📧";
+}
+
+.template-card__preview {
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 1.5;
+    margin: 1rem 0;
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.template-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.template-card__stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.template-card__stat {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.template-card__actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.template-card__action {
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.template-card__action:hover {
+    background-color: #f6f6f6;
+}
+
+/* Empty state */
+.templates-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f6f6f6;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+.templates-empty__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.templates-empty__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.templates-empty__text {
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+/* Modal styles */
+.fr-modal {
+    padding: 2rem;
+}
+
+.fr-modal__content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Template preview in modal */
+.template-preview {
+    background: #f6f6f6;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.template-preview__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.template-preview__content {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+/* Variables highlight */
+.template-variable {
+    background-color: #fff4e6;
+    color: #b87a00;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.125rem;
+    font-family: monospace;
+    font-size: 0.875em;
+}

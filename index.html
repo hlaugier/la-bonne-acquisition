@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr" data-fr-theme>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bonne Acquisition - Dashboard</title>
+    
+    <!-- DSFR CSS -->
+    <link rel="stylesheet" href="node_modules/@gouvfr/dsfr/dist/dsfr.min.css">
+    <link rel="stylesheet" href="node_modules/@gouvfr/dsfr/dist/utility/icons/icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner" class="fr-header">
+        <div class="fr-header__body">
+            <div class="fr-container">
+                <div class="fr-header__body-row">
+                    <div class="fr-header__brand fr-enlarge-link">
+                        <div class="fr-header__brand-top">
+                            <div class="fr-header__logo">
+                                <p class="fr-logo">
+                                    République<br>Française
+                                </p>
+                            </div>
+                            <div class="fr-header__service">
+                                <a href="/" title="La Bonne Acquisition">
+                                    <p class="fr-header__service-title">La Bonne Acquisition</p>
+                                </a>
+                                <p class="fr-header__service-tagline">Plateforme de gestion des campagnes de recrutement</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr-header__tools">
+                        <div class="fr-header__tools-links">
+                            <ul class="fr-btns-group">
+                                <li>
+                                    <button class="fr-btn fr-btn--secondary">
+                                        Créer une campagne
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="fr-btn">
+                                        Importer des contacts
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content with sidebar -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="fr-sidemenu" aria-label="Menu latéral">
+            <div class="fr-sidemenu__inner">
+                <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">
+                    Menu
+                </button>
+                <div class="fr-sidemenu__wrapper" id="fr-sidemenu-wrapper">
+                    <div class="fr-sidemenu__title">Navigation</div>
+                    <ul class="fr-sidemenu__list">
+                        <li class="fr-sidemenu__item fr-sidemenu__item--active">
+                            <a class="fr-sidemenu__link" href="index.html" aria-current="page">
+                                <span class="fr-icon-dashboard-3-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="fr-sidemenu__item">
+                            <a class="fr-sidemenu__link" href="templates.html">
+                                <span class="fr-icon-file-text-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Templates
+                            </a>
+                        </li>
+                        <li class="fr-sidemenu__item">
+                            <a class="fr-sidemenu__link" href="#contacts">
+                                <span class="fr-icon-user-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Contacts
+                            </a>
+                        </li>
+                        <li class="fr-sidemenu__item">
+                            <a class="fr-sidemenu__link" href="#campaigns">
+                                <span class="fr-icon-mail-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Campagnes
+                            </a>
+                        </li>
+                        <li class="fr-sidemenu__item">
+                            <a class="fr-sidemenu__link" href="#analytics">
+                                <span class="fr-icon-bar-chart-box-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Analytiques
+                            </a>
+                        </li>
+                        <li class="fr-sidemenu__item">
+                            <a class="fr-sidemenu__link" href="#settings">
+                                <span class="fr-icon-settings-5-line fr-sidemenu__icon" aria-hidden="true"></span>
+                                Paramètres
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main id="main" role="main" class="main-content">
+            <div class="fr-container-fluid fr-py-6w">
+            <!-- Page title and stats -->
+            <div class="fr-grid-row fr-grid-row--gutters fr-mb-3w">
+                <div class="fr-col-12">
+                    <h1>Tableau de bord des campagnes</h1>
+                </div>
+            </div>
+
+            <!-- Filters and search -->
+            <div class="fr-grid-row fr-grid-row--gutters fr-mb-4w align-items-end">
+                <div class="fr-col-12 fr-col-md-6">
+                    <div class="fr-input-group">
+                        <label class="fr-label" for="search-campaigns">
+                            Rechercher une campagne
+                        </label>
+                        <input class="fr-input" placeholder="Rechercher..." type="search" id="search-campaigns" name="search-campaigns">
+                    </div>
+                </div>
+                <div class="fr-col-12 fr-col-md-3">
+                    <div class="fr-select-group">
+                        <label class="fr-label" for="status-filter">
+                            Statut
+                        </label>
+                        <select class="fr-select" id="status-filter">
+                            <option value="all">Tous les statuts</option>
+                            <option value="scheduled">Programmée</option>
+                            <option value="running">En cours</option>
+                            <option value="completed">Terminée</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fr-col-12 fr-col-md-3">
+                    <div class="fr-select-group">
+                        <label class="fr-label" for="date-filter">
+                            Période
+                        </label>
+                        <select class="fr-select" id="date-filter">
+                            <option value="all">Toutes les périodes</option>
+                            <option value="today">Aujourd'hui</option>
+                            <option value="week">Cette semaine</option>
+                            <option value="month">Ce mois</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination info -->
+            <div class="fr-grid-row fr-mb-2w">
+                <div class="fr-col-12">
+                    <p class="fr-text--sm"><strong>1-25</strong> sur <strong>503</strong> campagnes</p>
+                </div>
+            </div>
+
+            <!-- Campaigns table -->
+            <div class="campaigns-table-container">
+                <table class="campaigns-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="select-all" name="select-all">
+                            </th>
+                            <th>Campagne</th>
+                            <th>Statut</th>
+                            <th>Cible</th>
+                            <th>Contacts</th>
+                            <th>Distribués</th>
+                            <th>Ouvertures</th>
+                            <th>Clics</th>
+                            <th>Offres</th>
+                            <th>Entreprises</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="campaigns-tbody">
+                        <!-- Campaigns will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <nav role="navigation" class="fr-pagination fr-mt-3w" aria-label="Pagination">
+                <ul class="fr-pagination__list">
+                    <li>
+                        <a class="fr-pagination__link fr-pagination__link--first" href="#" aria-label="Première page">
+                            Première page
+                        </a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link fr-pagination__link--prev" href="#" aria-label="Page précédente">
+                            Précédente
+                        </a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link" href="#" aria-label="Page 1" aria-current="page">1</a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link" href="#" aria-label="Page 2">2</a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link" href="#" aria-label="Page 3">3</a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link fr-displayed-lg" href="#">...</a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link fr-displayed-lg" href="#" aria-label="Page 21">21</a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link fr-pagination__link--next" href="#" aria-label="Page suivante">
+                            Suivante
+                        </a>
+                    </li>
+                    <li>
+                        <a class="fr-pagination__link fr-pagination__link--last" href="#" aria-label="Dernière page">
+                            Dernière page
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </main>
+    </div>
+
+    <!-- DSFR JS -->
+    <script type="module" src="node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+    <script nomodule src="node_modules/@gouvfr/dsfr/dist/dsfr.nomodule.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
