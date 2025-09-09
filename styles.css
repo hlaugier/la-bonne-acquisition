@@ -395,3 +395,17 @@
 [data-fr-theme="dark"] .campaign-date {
     color: #b5b5b5;
 }
+[data-fr-theme="dark"] .fr-input,
+[data-fr-theme="dark"] .fr-select,
+[data-fr-theme="dark"] .fr-search-bar .fr-input {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border-color: #2b2b2b;
+}
+[data-fr-theme="dark"] .fr-input::placeholder {
+    color: #a9a9a9;
+}
+[data-fr-theme="dark"] .fr-select option {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+}
